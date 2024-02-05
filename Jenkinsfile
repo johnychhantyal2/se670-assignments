@@ -4,14 +4,14 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-                git 'https://github.com/johnychhantyal2/se670-assignments.git'
-                sh 'mvn clean compile'
+                git 'https://github.com/vdespa-collab/java-rest-api-calculator.git'
+                sh './mvnw clean compile'
                 // bat '.\\mvnw clean compile'
             }
         }
         stage('Test') {
             steps {
-                sh 'mvn test'
+                sh './mvnw test'
                 // bat '.\\mvnw test'
             }
 
@@ -22,3 +22,4 @@ pipeline {
             }
         }
     }
+}
