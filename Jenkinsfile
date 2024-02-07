@@ -5,13 +5,13 @@ pipeline {
         stage('Build') {
             steps {
                 git 'https://github.com/johnychhantyal2/se670-assignments.git'
-                sh './mvnw clean compile'
+                sh 'mvn clean compile'
                 // bat '.\\mvnw clean compile'
             }
         }
         stage('Test') {
             steps {
-                sh './mvnw test'
+                sh 'mvn test'
                 // bat '.\\mvnw test'
             }
 
