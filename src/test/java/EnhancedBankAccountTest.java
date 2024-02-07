@@ -68,4 +68,12 @@ public class EnhancedBankAccountTest {
         Assertions.assertThrows(IllegalArgumentException.class, () -> new EnhancedBankAccount(-100, EnhancedBankAccount.AccountType.SAVINGS),
                 "Should throw IllegalArgumentException for negative initial balance.");
     }
+
+    @Test
+    public void testApplyInterestToNegativeBalance() {
+        EnhancedBankAccount account = new EnhancedBankAccount(100, EnhancedBankAccount.AccountType.SAVINGS);
+        account.withdraw(100);
+        account.applyInterest();
+        Assertions.assertEquals(0.0, account.getBalance(), "Negative or zero balances should not accrue interest.");
+    }
 }

@@ -31,6 +31,9 @@ public class EnhancedBankAccount {
     }
 
     public void applyInterest() {
+        if (balance <= 0) {
+            return; // No interest applied to negative or zero balances
+        }
         double interest = calculateInterest();
         applyInterestToBalance(interest);
         logInterestApplied(interest);
