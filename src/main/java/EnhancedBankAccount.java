@@ -32,9 +32,18 @@ public class EnhancedBankAccount {
 
     public void applyInterest() {
         double interest = calculateInterest();
-        balance += interest;
-        logTransaction("Interest", interest);
+        applyInterestToBalance(interest);
+        logInterestApplied(interest);
     }
+
+    private void applyInterestToBalance(double interest) {
+        balance += interest;
+    }
+
+    private void logInterestApplied(double interest) {
+        logTransaction("Interest Applied", interest);
+    }
+
 
     public double getBalance() {
         return balance;
