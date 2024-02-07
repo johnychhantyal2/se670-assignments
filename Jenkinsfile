@@ -1,14 +1,6 @@
 pipeline {
     agent any
 
-    options {
-        skipStagesAfterUnstable()
-    }
-
-    environment {
-        // Define environment variables if needed
-    }
-
     stages {
         stage('Clean Workspace') {
             steps {
@@ -40,28 +32,7 @@ pipeline {
                 always {
                     junit '**/target/surefire-reports/TEST-*.xml'
                 }
-                failure {
-                    // Add steps to handle build failure if needed
-                }
             }
-        }
-    }
-
-    post {
-        always {
-            // Add steps to be executed after every run, such as cleanup or notifications
-        }
-        success {
-            // Steps to execute on success
-        }
-        failure {
-            // Steps to execute on failure
-        }
-        unstable {
-            // Steps to execute if the build is marked as unstable
-        }
-        aborted {
-            // Steps to execute if the build is aborted
         }
     }
 }
