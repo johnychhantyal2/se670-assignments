@@ -9,7 +9,8 @@ pipeline {
         }
         stage('Checkout SCM') {
             steps {
-                git 'https://github.com/johnychhantyal2/se670-assignments.git'
+                git branch: 'main',
+                    url: 'https://github.com/johnychhantyal2/se670-assignments.git'
             }
         }
         stage('Preparation') {
