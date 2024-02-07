@@ -21,7 +21,7 @@ public class BoundedQueue {
         size  = 0; front = 0; back  = 0;
     }
 
-    public void enQueue (Object o)
+    /*public void enQueue (Object o)
             throws NullPointerException, IllegalStateException
     {  // Modifies: this
         // Effects:   If argument is null throw NullPointerException
@@ -37,7 +37,7 @@ public class BoundedQueue {
             elements [back] = o;
             back = (back+1) % capacity;
         }
-    }
+    }*/
 
     public Object deQueue () throws IllegalStateException
     {  // Modifies: this
